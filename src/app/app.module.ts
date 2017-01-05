@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component'
 
+import { SimpleNotificationsModule } from 'angular2-notifications';
 import {  OAuthService } from 'angular-oauth2-oidc';
 
 @NgModule({
@@ -16,7 +17,8 @@ import {  OAuthService } from 'angular-oauth2-oidc';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    SimpleNotificationsModule
   ],
   providers: [OAuthService],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+
+import { NotificationsService } from 'angular2-notifications';
 import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
@@ -9,6 +11,11 @@ import { OAuthService } from 'angular-oauth2-oidc';
 })
 export class AppComponent {
   title = 'app works!';
+  public options = {
+    position: ["bottom", "left"],
+    timeOut: 5000,
+    lastOnBottom: true
+  }
 
   constructor(private _notificationService: NotificationsService , private oauthService: OAuthService ){
         // Login-Url
