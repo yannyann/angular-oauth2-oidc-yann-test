@@ -1,27 +1,30 @@
-<div>This is only a bullshit page to show the differents functionalities form angular-oauth2-oidc</div>
+<div >
 
-<button class="btn btn-default" (click)="switchFlow()">change flow</button>
+    <div>This is only a bullshit page to show the differents functionalities form angular-oauth2-oidc</div>
 
-<div [hidden]="implicitFlow">
-    <h3>Password flow</h3>
-    <div>
-        username : <input  [(ngModel)]="username" placeholder="username">
-    </div>
-    <div>
-        password : <input  [(ngModel)]="password" placeholder="password">
-    </div>
-    <div>
+    <button class="btn btn-default" (click)="switchFlow()">change flow</button>
+
+    <div [hidden]="implicitFlow">
+        <h3>Password flow</h3>
+        <div class="form-group">
+            <label for="usr">Username : </label>
+            <input type="text" [(ngModel)]="username" class="form-control" placeholder="username" id="usr">
+        </div>
+        <div  class="form-group">
+            <label for="pwd">password : </label>
+            <input type="text"  [(ngModel)]="password" class="form-control" placeholder="password" id="pwd">
+        </div>
         <button class="btn btn-default" (click)="loginWithPassword()">Login with password workflow</button>
     </div>
+    <div [hidden]="!implicitFlow">
+        <h3>Implicit flow</h3>
+        <button class="btn btn-default" (click)="login()">Login implicitflow</button>
+    </div>
+    <div>
+    <button class="btn btn-default" (click)="logoff()">Logout</button>
+    </div>
+    <div>
+        Username/Passwort zum Testen: max/geheim
+    </div>
+    <div>{{token}}</div>
 </div>
-<div [hidden]="!implicitFlow">
-    <h3>Implicit flow</h3>
-    <button class="btn btn-default" (click)="login()">Login implicitflow</button>
-</div>
-<div>
- <button class="btn btn-default" (click)="logoff()">Logout</button>
-</div>
-<div>
-    Username/Passwort zum Testen: max/geheim
-</div>
- <div>{{token}}</div>
