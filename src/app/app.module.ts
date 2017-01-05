@@ -8,6 +8,7 @@ import { HomeComponent } from './home.component'
 
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import {  OAuthService } from 'angular-oauth2-oidc';
+import {AppState} from './appState';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import {  OAuthService } from 'angular-oauth2-oidc';
     HttpModule,
     SimpleNotificationsModule
   ],
-  providers: [OAuthService],
+  providers: [OAuthService, AppState],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
